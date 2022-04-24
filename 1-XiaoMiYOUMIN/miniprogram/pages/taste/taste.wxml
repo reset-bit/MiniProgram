@@ -1,0 +1,6 @@
+<!--miniprogram/pages/taste/taste.wxml-->
+<child class="child" generic:selectable="child2">
+	<view slot="s1">fa-ch message-1</view>
+	<view slot="s2">fa-ch message-2</view>
+</child>
+<button bindtap="invokeChildMethod">invoke child method</button>

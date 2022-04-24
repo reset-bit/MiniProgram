@@ -1,0 +1,3 @@
+<!--miniprogram/pages/list/edit/edit.wxml-->
+<input type="text" value="{{people.name}}" bindinput="changeName" />
+<button bindtap="save">确定</button>

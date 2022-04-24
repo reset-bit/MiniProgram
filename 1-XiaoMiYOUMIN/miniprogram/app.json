@@ -1,0 +1,60 @@
+{
+    "entryPagePath": "pages/index/index",
+    "pages": [
+        "pages/index/index",
+        "pages/category/category",
+        "pages/taste/taste",
+        "pages/cart/cart",
+        "pages/profile/profile",
+        "pages/list/list",
+        "pages/address/address",
+        "pages/order_confirm/order_confirm",
+        "pages/detail/detail",
+        "pages/address/edit/edit",
+        "pages/list/edit/edit"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "小米有品",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#aaa",
+        "selectedColor": "#E9B050",
+        "list": [{
+                "text": "首页",
+                "pagePath": "pages/index/index",
+                "iconPath": "./images/icons/home.png",
+                "selectedIconPath": "./images/icons/home_SL.png"
+            },
+            {
+                "text": "分类",
+                "pagePath": "pages/category/category",
+                "iconPath": "./images/icons/category.png",
+                "selectedIconPath": "./images/icons/category_SL.png"
+            },
+            {
+                "text": "品味",
+                "pagePath": "pages/taste/taste",
+                "iconPath": "./images/icons/taste.png",
+                "selectedIconPath": "./images/icons/taste_SL.png"
+            },
+            {
+                "text": "购物车",
+                "pagePath": "pages/cart/cart",
+                "iconPath": "./images/icons/cart.png",
+                "selectedIconPath": "./images/icons/cart_SL.png"
+            },
+            {
+                "text": "个人中心",
+                "pagePath": "pages/profile/profile",
+                "iconPath": "./images/icons/profile.png",
+                "selectedIconPath": "./images/icons/profile_SL.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+}

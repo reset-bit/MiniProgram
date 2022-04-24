@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml-->
+<video id='myVideo' controls="true" src="{{src}}" enable-danmu='true' danmu-btn autoplay="true"></video>
+<!-- 
+  video组件：
+    initial-time播放起始位置
+    controls是否显示默认播放控件
+-->
+<view class="danmuArea">
+  <input type="text" class="danmu" placeholder='请输入弹幕内容' bindinput="getDanmu"></input>
+  <button bindtap="sendDanmu">发送弹幕</button>
+</view>
+<view class="videoList">
+  <view class="videoBar" wx:for="{{list}}" wx:key='{{list.id}}' data-url='{{item.videoUrl}}' bindtap="playVideo">
+  <!-- 
+    wx:for循环，遍历数组，默认数组当前项下标为index，数组当前项为item 。
+    对array中数据，若使用wx:key，则未发生变化的对象不会重新创建，提高渲染效率
+  -->
+    <image src="/image/play.png" mode="aspectFit"></image>
+    <text>{{item.title}}</text>
+  </view>
+</view>

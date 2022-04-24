@@ -1,0 +1,7 @@
+/* miniprogram/pages/cart/cart.wxss */
+.cart-list-item {
+	display: flex;
+	align-items: center;
+	margin: 10rpx 0;
+}
+mi-count { margin-left: 10rpx; }

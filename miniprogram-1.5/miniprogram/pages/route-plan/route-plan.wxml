@@ -1,0 +1,87 @@
+<!--miniprogram/pages/route-plan/route-plan.wxml-->
+<view class="container">
+  <view class="searchbar">
+    <input type="text" placeholder="搜索您想去的地方"></input>
+    <image src="../../images/search.png"></image>
+  </view>
+  <swiper bindtap="getSwiper" style="z-index:{{zOfSwiper}}" circular="true">
+    <swiper-item>
+      <image src="../../images/bg-1.jpg" class="bg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/bg-2.jpg" class="bg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/bg-3.jpg" class="bg" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+  <view class="scroll-view-area">
+    <!-- 外层套view，防止吸顶/底抖动 -->
+    <scroll-view scroll-y="{{isScroll}}" class="tab {{tabFix}}" id="tab"  
+    scroll-into-view="{{handle-area}}" enhanced="true" fast-deceleration="true" animation="{{animation}}">
+    <!-- class="class1 class2" 同时拥有2个class；css中选择器：.class1.class2 -->
+    <!-- enhanced:scroll-view增强特性；fast-deceleration:滑动减速速率控制 -->
+      <view class="handle-area">
+        <view class="handle"></view>
+      </view>
+      <scroll-view scroll-y="true" class="drawer">
+        <view class="btns">
+          <button class="big-btn" id="whole-btn" style="width: 325rpx;" bindtap="goToWholePlan">
+            <image src="../../images/btn-bg-whole.png"></image>
+            <view class="btn-title">全规划</view>
+            <view class="btn-detail">交通住宿服务一条龙</view>
+          </button>
+          <button class="big-btn" id="part-btn" style="width: 325rpx;" bindtap="goToPartPlan">
+            <image src="../../images/btn-bg-part.png"></image>
+            <view class="btn-title">半规划</view>
+            <view class="btn-detail">住哪儿哪去自由选择</view>
+          </button>
+        </view>
+        <view class="tools">
+          <text class="tips">工具包</text>
+          <view class="tool">
+            <view class="tool-detail">
+              <image src="../../images/store.png"></image>
+              <text>集市</text>
+            </view>
+            <view class="tool-detail">
+              <image src="../../images/strategy.png"></image>
+              <text>攻略</text>
+            </view>
+            <view class="tool-detail">
+              <image src="../../images/idea.png"></image>
+              <text>玩法</text>
+            </view>
+            <view class="tool-detail">
+              <image src="../../images/car.png"></image>
+              <text>用车</text>
+            </view>
+            <view class="tool-detail">
+              <image src="../../images/screening.png"></image>
+              <text>筛选</text>
+            </view>
+            <view class="tool-detail">
+              <image src="../../images/more.png"></image>
+              <text>更多</text>
+            </view>
+          </view>
+        </view>
+        <view class="activities">
+          <text class="tips">活动特惠</text>
+            <view class="acti-detail" id="acti-guoqing">
+              <image src="../../images/acti-1.jpg" mode="aspectFill"></image>
+              <text>决不辜负·七天小长假</text>
+            </view>
+            <view class="acti-detail" id="acti-zhongqiu">
+              <image src="../../images/acti-2.jpg" mode="aspectFill"></image>
+              <text>美好春天·五一玩啥</text>
+            </view>
+        </view>
+        <view class="bottom">
+          <view class="divider"></view>
+          <view>祝您旅行愉快：）</view>
+        </view>
+      </scroll-view>
+    </scroll-view>
+  </view>
+</view>

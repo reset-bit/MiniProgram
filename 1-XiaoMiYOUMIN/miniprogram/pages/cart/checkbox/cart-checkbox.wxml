@@ -1,0 +1,3 @@
+<!--pages/cart/checkbox/cart-checkbox.wxml-->
+<image src="./icon_checkbox_check.png" wx:if="{{checked}}" class="cart-checkbox" bindtap="toggleChecked"></image>
+<image src="./icon_checkbox_uncheck.png" wx:else class="cart-checkbox" bindtap="toggleChecked"></image>

@@ -1,0 +1,5 @@
+/* components/miCount/mi-count.wxss */
+.mi-count {
+	display: flex;
+	align-items: center;
+}

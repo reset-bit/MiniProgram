@@ -1,0 +1,110 @@
+<view class="container">
+  <view class="head">
+    <image src="../../../../images/whole-plan.png"></image>
+    <view class="head-title">全规划</view>
+    <view class="head-detail">交通住宿服务全搞定</view>
+  </view>
+  <view class="body">
+    <view class="tips">必填项</view>
+    <view class="area mandatory-area">
+      <view class="loc ori-area">
+        <text>出发地</text>
+        <view class="input-area">
+          <view class="input-line">
+            <input type="text" id="start" placeholder="必填" value="{{ori[0]}}" bindinput="getSuggest"/>
+            <image src="../../../../images/location.png" id="locationImg" bindtap="getLocation"></image>
+          </view>
+          <view wx:for="{{suggestion}}" wx:key="index" class="suggestion-box" wx:if="{{sngCondition=='start'?true:false}}">
+            <view class="divider" wx:if="{{index != 0}}"></view>
+            <view bindtap="backfill" id="{{index}}" class="suggestion-bar">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="divider"></view> -->
+      <view class="loc des-area" style="height:{{inputHeight[1]}}rpx">
+        <text>目的地</text>
+        <view class="input-area">
+          <view class="input-line" wx:for="{{des}}" wx:for-item="items" wx:key="id">
+            <input type="text" id="dest" placeholder="必填" value="{{des[0].placeName}}" bindinput="getSuggest"/>
+            <!-- <image src="../../../../images/add.png" bindtap="addDes" wx:if="{{inputShow[items.id]}}"></image> -->
+            <!-- <image src="../../../../images/subtract.png" bindtap="subtractDes" wx:else id="img-{{des.length-2}}"></image> -->
+          </view>
+          <view wx:for="{{suggestion}}" wx:key="index" class="suggestion-box" wx:if="{{sngCondition=='dest'?true:false}}">
+            <view class="divider" wx:if="{{index != 0}}"></view>
+            <view bindtap="backfill" id="{{index}}" class="suggestion-bar">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="time-area">
+        <text>出发时间</text>
+        <picker mode="date" bindchange='changeStartTime'>
+          <view wx:if="{{startTime == ''}}">请选择</view>
+          <view wx:else>{{startTime}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="tips">选填项</view>
+    <view class="area option-area">
+      <view class="option">
+        <text>旅行目的</text>
+        <view class="btns">
+          <view class="s-btn" id="0-{{items.id}}" wx:for="{{list[0]}}" wx:for-item="items" wx:key="id"
+           bindtap="selected" style="color:{{list[0][items.id].color}};border-color:{{list[0][items.id].color}}">{{items.name}}</view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="option">
+        <text>旅行偏好</text>
+        <view class="btns">
+          <view class="s-btn" id="1-{{items.id}}" wx:for="{{list[1]}}" wx:for-item="items" wx:key="id"
+           bindtap="selected" style="color:{{list[1][items.id].color}};border-color:{{list[1][items.id].color}}">{{items.name}}</view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="option">
+        <text>随行人员</text>
+        <view class="btns">
+          <view class="s-btn" id="2-{{items.id}}" wx:for="{{list[2]}}" wx:for-item="items" wx:key="id"
+           bindtap="selected" style="color:{{list[2][items.id].color}};border-color:{{list[2][items.id].color}}">{{items.name}}</view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="option">
+        <text>随行总数</text>
+        <input type="number" name="" id="" placeholder="选填"/>
+      </view>
+      <view class="divider"></view>
+      <view class="option">
+        <text>期望居所</text>
+        <view class="btns">
+          <view class="s-btn" id="3-{{items.id}}" wx:for="{{list[3]}}" wx:for-item="items" wx:key="id"
+           bindtap="selected" style="color:{{list[3][items.id].color}};border-color:{{list[3][items.id].color}}">{{items.name}}</view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="option">
+        <text>体力耗费</text>
+        <view class="btns">
+          <view class="s-btn" id="4-{{items.id}}" wx:for="{{list[4]}}" wx:for-item="items" wx:key="id"
+           bindtap="selected" style="color:{{list[4][items.id].color}};border-color:{{list[4][items.id].color}}">{{items.name}}</view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="option">
+        <text class="long-text">开启线下导游服务</text>
+        <switch color="#EA8058"></switch>
+      </view>
+      <view class="divider"></view>
+      <view class="option">
+        <text class="long-text">允许行程中推荐当地特色产品</text>
+        <switch color="#EA8058"></switch>
+      </view>
+    </view>
+    <view class="tail">
+      <switch type="checkbox"></switch>
+      阅读并同意<navigator url="">《相关条款》</navigator>
+    </view>
+  </view>
+  <view class="btn" bindtap="goToDetail">查看推荐方案</view>
+</view>

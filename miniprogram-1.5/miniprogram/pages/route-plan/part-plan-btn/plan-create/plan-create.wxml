@@ -1,0 +1,52 @@
+<view class="container">
+  <view class="head">
+    <image src="../../../../images/part-plan.png"></image>
+    <view class="head-title">半规划</view>
+    <view class="head-detail">住哪儿咋去自由选择</view>
+  </view>
+  <view class="body">
+    <view class="area mandatory-area">
+      <view class="loc ori-area">
+        <text>出发地</text>
+        <view class="input-area">
+          <view class="input-line">
+            <input type="text" id="start" placeholder="必填" value="{{ori[0]}}" bindinput="getSuggest"/>
+            <image src="../../../../images/location.png" id="locationImg" bindtap="getLocation"></image>
+          </view>
+          <view wx:for="{{suggestion}}" wx:key="index" class="suggestion-box" wx:if="{{sngCondition=='start'?true:false}}">
+            <view class="divider" wx:if="{{index != 0}}"></view>
+            <view bindtap="backfill" id="{{index}}" class="suggestion-bar">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="divider"></view> -->
+      <view class="loc des-area" style="height:{{inputHeight[1]}}rpx">
+        <text>目的地</text>
+        <view class="input-area">
+          <view class="input-line" wx:for="{{des}}" wx:for-item="items" wx:key="id">
+            <input type="text" id="dest" placeholder="必填" value="{{des[0].placeName}}" bindinput="getSuggest"/>
+            <image src="../../../../images/add.png" bindtap="addDes" wx:if="{{inputShow[items.id]}}"></image>
+            <image src="../../../../images/subtract.png" bindtap="subtractDes" wx:else id="img-{{des.length-2}}"></image>
+          </view>
+          <view wx:for="{{suggestion}}" wx:key="index" class="suggestion-box" wx:if="{{sngCondition=='dest'?true:false}}">
+            <view class="divider" wx:if="{{index != 0}}"></view>
+            <view bindtap="backfill" id="{{index}}" class="suggestion-bar">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="time-area">
+        <text>出发时间</text>
+        <picker mode="date" bindchange='changeStartTime'>
+          <view wx:if="{{startTime == ''}}">请选择</view>
+          <view wx:else>{{startTime}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="tail">
+      <switch type="checkbox"></switch>
+      阅读并同意<navigator url="">《相关条款》</navigator>
+    </view>
+  </view>
+  <view class="btn" bindtap="goToDetail">查看推荐方案</view>
+</view>

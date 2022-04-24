@@ -1,0 +1,11 @@
+wxml:
+	1.wx:for循环和wx:if嵌套尽量不超过2层，如果有嵌套，指定层级item和index值
+	2.相关key一律小写，value以小驼峰方式命名，比如 data-canuse="{{canUse}}"
+	3.自定义组件命名统一以cp开头，如<cp-myview></cp-myview>
+	4.尽量使用catch代替bind绑定，比如catchtouchmove代替bindtouchmove，阻止冒泡时很多情况下可以提升性能
+
+js:
+	1.强类型检查:=== 代替 ==,!==代替!=
+	2.变量以及方法/函数命名：小驼峰命名法，如 let orderIndex=1;
+	3.类命名：大驼峰命名法，如 Class Student{}
+	4.Storage的Key命名：统一大写+下划线方式，如USER_OPENID:wx.setStorageSync('USER_OPENID', res.result.openid);

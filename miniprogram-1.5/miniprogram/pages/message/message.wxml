@@ -1,0 +1,122 @@
+<!--miniprogram/pages/message/message.wxml-->
+<view class="container">
+  <view class="bar">
+    <view class="bar-item" id="together" style="font-size:{{barFont[0]}}rpx;color:{{barColor[0]}}">一起去</view>
+    <view class="bar-item" id="affection" style="font-size:{{barFont[1]}}rpx;color:{{barColor[1]}}">亲情号</view>
+    <view class="bar-item" id="friend" style="font-size:{{barFont[2]}}rpx;color:{{barColor[2]}}">朋友</view>
+    <view class="bar-item" id="customer-service" style="font-size:{{barFont[3]}}rpx;color:{{barColor[3]}}">客服</view>
+  </view>
+  <view class="search-and-add">
+    <view class="searchbar">
+      <input type="text" placeholder="输入您想联系的用户"></input>
+      <image src="../../images/search.png"></image>
+    </view>
+    <image src="../../images/add.png" class="add"></image>
+  </view>
+  <swiper circular="true" bindchange="changeBar" current="0">
+    <swiper-item>
+      <view class="swiper-container" id="together">
+        <view class="chats" id="cur0" bindtap="goToChat">
+          <image src="../../images/people-2.jpg" mode="apectFill" class="photo"></image>
+          <view class="chat">
+            <text class="name">妈</text>
+            <view class="chat-detail">
+              <view class="message">{{lastContent[0].content[0]}}</view>
+              <image src="../../images/attention.png"></image>
+              <image src="../../images/positioning_2.png"></image>
+            </view>
+            <view class="divider"></view>
+          </view>
+        </view>
+        <view class="attention">
+          <image src="../../images/attention_0.png"></image>
+          <text>您与该用户距离超过1000m，请注意保持联系</text>
+          <image src="../../images/close.png"></image>
+        </view>
+        <map id="myMap" wx:if="{{ismap}}" markers="{{markers}}" show-location="true" include-points="{{points}}"></map>
+        <view class="tips" wx:else>
+          <view class="tip">节假日人流量较多，疫情期间请做好防护</view>
+          <view class="tip">当前时间段车流量较多，请注意避让行人与来往车辆</view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-container" id="affection">
+        <view class="contact">
+          <image src="../../images/people-1.jpg" mode="apectFill"></image>
+          <view class="contact-detail">
+            <text class="name">爸</text>
+          </view>
+        </view>
+        <view class="divider"></view>
+        <view class="contact">
+          <image src="../../images/people-2.jpg" mode="apectFill"></image>
+          <view class="contact-detail">
+            <text class="name">妈</text>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-container" id="friend">
+        <view class="contact">
+          <image src="../../images/people-3.jpg" mode="apectFill"></image>
+          <view class="contact-detail">
+            <text class="name">常小云</text>
+          </view>
+        </view>
+        <view class="divider"></view>
+        <view class="contact">
+          <image src="../../images/people-4.jpg" mode="apectFill"></image>
+          <view class="contact-detail">
+            <text class="name">冉建颖</text>
+          </view>
+        </view>
+        <view class="divider"></view>
+        <view class="contact">
+          <image src="../../images/people-5.jpg" mode="apectFill"></image>
+          <view class="contact-detail">
+            <text class="name">张璐</text>
+          </view>
+        </view>
+        <view class="divider"></view>
+        <view class="contact">
+          <image src="../../images/people-6.jpg" mode="apectFill"></image>
+          <view class="contact-detail">
+            <text class="name">曾融</text>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-container"  id="customer-service">
+        <view class="chats" id="ser0" bindtap="goToChat">
+          <image src="../../images/cus_serv_woman.jpg" mode="apectFill" class="photo"></image>
+          <view class="chat">
+            <text class="name">官方客服</text>
+            <view class="chat-detail">
+              <view class="message">{{lastContent[1].content[0]}}</view>
+            </view>
+            <view class="divider"></view>
+          </view>
+        </view>
+        <view class="chats" id="ser1" bindtap="goToChat">
+          <image src="../../images/cus_serv_man.jpg" mode="apectFill" class="photo"></image>
+          <view class="chat">
+            <text class="name">导游客服</text>
+            <view class="chat-detail">
+              <view class="message">{{lastContent[1].content[1]}}</view>
+            </view>
+            <view class="divider"></view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="openmap" bindtap="openMap" style="background:{{mapBtnColor}}">
+    <image src="../../images/{{positioningIcon}}.png"></image>
+  </view>
+  <view class="sos">
+    <image src="../../images/sos.png"></image>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+
+.searchbar{
+  width: 95%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  background: rgb(221, 221, 221);
+  border-radius: 40rpx;
+}
+
+.searchbar input{
+  width: 85%;
+  margin-left: 30rpx;
+}
+
+.searchbar image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.divider{
+  height: 5rpx;
+  background: #E0E3DA;
+  margin: 20rpx 0rpx 10rpx 0rpx;
+}

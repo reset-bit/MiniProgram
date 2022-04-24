@@ -1,0 +1,248 @@
+/* miniprogram/pages/message/message.wxss */
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F5F5F5;
+}
+
+.bar{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.bar-item{
+  margin-left: 30rpx;
+  font-family: microsoft yahei;
+  color: gray;
+}
+
+.search-and-add{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.searchbar{
+  width: 85%;
+}
+
+.search-and-add .add{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 15rpx;
+}
+
+swiper{
+  width: 100%;
+  height: 1100rpx;
+}
+
+swiper-item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+swiper-item .swiper-container{
+  width: 95%;
+  height: 1000rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 对话（一起去+客服） */
+.chats{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.photo{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin: 20rpx;
+}
+
+.chat{
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat .name{
+  font-size: 40rpx;
+  color: black;
+  margin-top: 35rpx;
+}
+
+.chat-detail{
+  width: 100%;
+  height: 35rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.chat-detail .message{
+  width: 80%;
+  height: auto;
+  font-size: 25rpx;
+  color: gray;
+  margin-top: 10rpx;
+  margin-left: 5rpx;
+}
+
+.chat-detail image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 5rpx;
+  margin-right: 5rpx;
+}
+
+.divider{
+  width: 90%;
+}
+
+/* 警告提示 */
+.attention{
+  width: 90%;
+  height: 60rpx;
+  background: #F4A403;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+}
+
+.attention image{
+  width: 35rpx;
+  height: 30rpx;
+  margin: 10rpx 20rpx 10rpx 20rpx;
+}
+
+.attention text{
+  width: 100%;
+  color: #fff;
+  font-size: 25rpx;
+}
+
+/* 联系人（亲情号+朋友） */
+.contact{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 20rpx;
+}
+
+.contact-detail{
+  width: 80%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-detail .name{
+  font-size: 36rpx;
+  color: black;
+}
+
+#affection .divider{
+  height: 2rpx;
+  margin: 0rpx;
+}
+
+#friend .divider{
+  height: 2rpx;
+  margin: 0rpx;
+}
+
+/* 悬浮按钮及其控件 */
+.openmap{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 170rpx;
+  right: 20rpx;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #A2E6BD;
+  border-radius: 50%;
+  box-shadow: 0rpx 5rpx 10rpx rgb(189, 189, 189);
+}
+
+.openmap image{
+  width: 70%;
+  height: 70%;
+}
+
+map{
+  width: 95%;
+  height: 660rpx;
+  margin-top: 40rpx;
+}
+
+.tips{
+  width: 95%;
+  height: 660rpx;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tip{
+  width: 95%;
+  height: auto;
+  margin: 10rpx;
+  padding: 20rpx;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 20rpx;
+  background: rgba(180, 224, 245, 0.925);
+}
+
+.sos{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EA8058;
+  border-radius: 50%;
+  box-shadow: 0rpx 5rpx 5rpx rgb(189, 189, 189);
+}
+
+.sos image{
+  width: 60%;
+  height: 60%;
+}

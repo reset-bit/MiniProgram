@@ -1,0 +1,18 @@
+<!--miniprogram/pages/personal-center/order-btn/order-btn.wxml-->
+<view class="container">
+  <view class="plan-detail" wx:for="{{plans}}" wx:key="index">
+    <view class="col">
+      <view class="col-name">{{item.restaurant}}</view>
+      <view class="status">无需预定</view>
+    </view>
+    <view class="divider"></view>
+    <view class="col">
+      <view class="col-name">{{item.hotel}}</view>
+      <view class="status">已预定，未支付</view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="divider"></view>
+    <view>我是有底线的：）</view>
+  </view>
+</view>

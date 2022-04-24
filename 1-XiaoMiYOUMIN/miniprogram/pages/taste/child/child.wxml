@@ -1,0 +1,7 @@
+<!--pages/taste/child/child.wxml-->
+<slot name="s1"></slot>
+<text>component-child</text>
+<text>{{num}}</text>
+<slot name="s2"></slot>
+
+<selectable num="{{num}}"></selectable>

@@ -1,0 +1,19 @@
+<!--miniprogram/pages/address/edit/edit.wxml-->
+<wxs module="wxs">
+    function strToArr(str, seperator) {
+        return str.split(seperator);
+    };
+    // module.exports.strToArr = strToArr;
+    module.exports = {
+        strToArr: strToArr
+    };
+</wxs>
+
+<view>
+    <l-input type="text" value="{{address.name}}" bindinput="inputNameHandler" label="用户名"/>
+    <l-input type="text" value="{{address.phone}}" bindinput="inputPhoneHandler" label="电话号码"/>
+    <picker mode="region" value="{{wxs.strToArr(address.region, ' ')}}" bindchange="changeRegionHandler">
+        {{address.region || "请选择省/市/区"}}
+    </picker>
+    <l-button bindtap="save">确定</l-button>
+</view>

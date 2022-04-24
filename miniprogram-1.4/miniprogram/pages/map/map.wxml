@@ -1,0 +1,12 @@
+<!--miniprogram/pages/map/map.wxml-->
+<view class="container">
+  <map class="my-map" name="my-map" latitude="{{markers[0].latitude}}" longitude="{{markers[0].longitude}}"
+  markers="{{markers}}" bindtap="moveCenter"></map>
+  <!-- 
+    latitude中心纬度；longtitude中心经度
+    bindtap点击地图时触发，返回经纬度信息
+  -->
+  <button type="primary" bindtap="getTargetLocation">周边违章高发地查询</button>
+  <!-- button type按钮的样式类型：primary绿色；default白色；warn红色 -->
+</view>
+

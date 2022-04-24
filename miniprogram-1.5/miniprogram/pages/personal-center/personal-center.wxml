@@ -1,0 +1,63 @@
+<!--miniprogram/pages/personal-center/personal-center.wxml-->
+<view class="container">
+  <image class="bg" src="../../images/pc_bg_1.png" mode="aspectFill"></image>
+  <image class="top-bg" src="../../images/pc_bg_2.png" mode="aspectFill"></image>
+  <view class="top-area">
+    <image class="userphoto" src="{{userphoto}}" bindtap="getUserProfile"></image>
+    <text class="username">{{username}}</text>
+  </view>
+  <scroll-view scroll-y="true">
+    <view class="center-area">
+      <button class="big-btn" id="order" style="width: 320rpx;" bindtap="goToOrder">
+        <view class="btn-title"><text>我的</text>订单</view>
+        <image src="../../images/order.png"></image>
+      </button>
+      <button class="big-btn" id="plan" style="width: 320rpx;" bindtap="goToPlan">
+        <view class="btn-title"><text>我的</text>计划</view>
+        <image src="../../images/plan.png"></image>
+      </button>
+    </view>
+    <view class="bottom-area">
+      <view class="div">
+        <text class="div-title">会员</text>
+        <view class="divider"></view>
+        <view class="div-detail">
+          <image src="../../images/member.png"></image>
+          <text>会员特权</text>
+        </view>
+      </view>
+      <view class="div">
+        <text class="div-title">其它</text>
+        <view class="divider"></view>
+        <view class="div-detail">
+          <image src="../../images/footprint.png"></image>
+          <text>足迹记录</text>
+        </view>
+        <view class="div-detail">
+          <image src="../../images/offline.png"></image>
+          <text>线下景行</text>
+        </view>
+        <view class="div-detail">
+          <image src="../../images/service.png"></image>
+          <text>服务中心</text>
+        </view>
+      </view>
+      <view class="div">
+        <text class="div-title">配置</text>
+        <view class="divider"></view>
+        <view class="div-detail">
+          <image src="../../images/setting.png"></image>
+          <text>我的设置</text>
+        </view>
+      </view>
+      <view class="div">
+        <text class="div-title">账户</text>
+        <view class="divider"></view>
+        <view class="div-detail" bindtap="exit">
+          <image src="../../images/exit.png"></image>
+          <text>退出登录</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,12 @@
+<!--miniprogram/pages/cart/cart.wxml-->
+<view>
+	<!-- 事件冒泡 -->
+	<view wx:for="{{list}}" wx:key="id" class="cart-list-item" data-id="{{item.id}}" bind:toggleChecked="toggleChecked" bind:decrease="decrease" bind:increase="increase">
+		<cart-checkbox checked="{{item.checked}}" bindtoggleChecked=""></cart-checkbox>
+		<text>{{item.name}}</text>
+		<text>￥ {{item.price}}.00</text>
+		<mi-count count="{{item.count}}"/>
+		<text>合计：￥ {{item.count * item.price}}.00</text>
+	</view>
+</view>
+<text>合计：￥ {{total}}.00</text>

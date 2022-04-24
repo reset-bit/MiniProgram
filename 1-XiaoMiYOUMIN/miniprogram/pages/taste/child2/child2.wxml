@@ -1,0 +1,3 @@
+<!--pages/taste/child2/child2.wxml-->
+<text>component-grandson1</text>
+<view>{{num}}</view>

@@ -1,0 +1,35 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <picker mode="region" bindchange='changeRegion'>
+    <view>{{region}}</view>
+  </picker>
+  <!-- 
+    picker-mode:(默认)普通、多列、时间、日期、省市区选择器
+    value:Array;  bindchange:value改变时触发change事件;   bindcancel:选择取消时触发;
+    disabled:boolean,是否禁用
+  -->
+  <image src="/image/{{img_src}}.png" mode="aspectFit"></image>
+  <text>{{now.liveData.reporttime}} {{now.liveData.weather}}</text>
+  <view class="detail">
+    <view class="bar">
+      <view class="box">
+        <view class="detail_name">温度：</view>
+        <view class="detail_content">{{now.liveData.temperature}}℃</view>
+      </view>
+      <view class="box">
+        <view class="detail_name">湿度：</view>
+        <view class="detail_content">{{now.humidity.data}}</view>
+      </view>
+    </view>
+    <view class="bar">
+      <view class="box">
+        <view class="detail-name">风向：</view>
+        <view class="detail-content">{{now.winddirection.data}}</view>
+      </view>
+      <view class="box">
+        <view class="detail-name">风力：</view>
+        <view class="detail-content">{{now.windpower.data}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/my/my.wxml-->
+<view class="myLogin">
+  <block wx:if="{{isLogin}}">
+    <image src="{{img_src}}"></image>
+    <text>{{nickName}}</text>
+  </block>  
+  <button wx:else open-type="getUserInfo" bindgetuserinfo="getMyInfo">未登录，点击登录</button>
+  <!-- 
+    open-type：按钮的微信开放能力，仅当值为getUserInfo时，bindgetuserinfo才有效 
+    先前该接口将弹出询问窗口，接口调整后不再弹窗，需要使用open-type请求用户授权
+  -->
+</view>
+<view class="myFavorite">
+  <text>我的收藏（{{number}}）</text>
+  <view class="news-list">
+    <view class="news-item" wx:for="{{newsList}}" wx:key="{{item.id}}" bindtap="goToDetail" data-id="{{item._id}}">
+    <image src="{{item.poster}}"></image>
+    <text>{{item.title}}————{{item.add_date}}</text>
+  </view>
+  </view>
+</view>

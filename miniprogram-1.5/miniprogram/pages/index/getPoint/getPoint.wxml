@@ -1,0 +1,4 @@
+<!--miniprogram/pages/getPoint/getPoint.wxml-->
+<map name="getPoint" id="getPoint" markers="{{markers}}" show-location="true"
+ include-points="{{points}}" bindtap="addPoint"></map>
+<button bindtap="getPoint" type="primary">点击连线</button>

@@ -1,0 +1,49 @@
+/* pages/index/index.wxss */
+video{
+  width: 100%;
+}
+
+.danmuArea{
+  display: flex;
+  flex-direction: row;
+}
+
+.danmu{
+  height: 80rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid gray;
+  flex-grow: 1;/*比例显示*/
+  margin: 10rpx;
+}
+
+button{
+  height: 80rpx;
+  color: white;
+  background-color: gray;
+  margin: 10rpx;
+  font-size: 30rpx;
+}
+
+.videoList{
+  width: 100%;
+  /* min-height: 300rpx; */
+}
+
+.videoBar{
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx;
+  border-bottom: 1rpx solid gray;
+  align-items: center;/*水平排列-水平居中*/
+}
+
+image{
+  width: 70rpx;
+  height: 70rpx;
+  margin: 20rpx;
+}
+
+text{
+  flex-grow: 1;
+  font-size: 35rpx;
+}

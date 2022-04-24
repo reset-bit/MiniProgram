@@ -1,0 +1,21 @@
+<!--miniprogram/pages/index/index.wxml-->
+<text class="text-demo">{{name}}</text>
+
+<view wx:for="{{9}}" wx:for-item="i">
+  <text wx:for="{{i + 1}}" wx:for-item="j">{{j + 1}} * {{i + 1}} = {{(i + 1) * (j + 1)}} </text>
+</view>
+<view hidden="{{true}}">i am hidden</view>
+<!-- <text wx:for="{{9}}" wx:for-index="pos1">
+  <text wx:for="{{9}}" wx:for-index="pos2">
+    <text wx:if="{{pos1 >= pos2}}">{{pos1}} * {{pos2}} = {{pos1 * pos2}}</text>
+  </text>
+</text> -->
+
+<button bindtap='tapHandler' data-num='{{100}}' type='primary'>tap demo</button>
+<input type="text" value="{{name}}" bindinput="inputHandler" />
+
+<navigator url="/pages/profile/profile" open-type="switchTab">跳转tabBar页面profile</navigator>
+<navigator url="/pages/list/list">跳转非tabBar页面list</navigator>
+<navigator url="/pages/list/list" open-type="redirect">redirectTo list</navigator>
+<button bindtap="goToTabBarPage">跳转tabBar页面profile</button>
+<button bindtap="goToNotTabBarPage">跳转非tabBar页面list</button>

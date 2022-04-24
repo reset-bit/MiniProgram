@@ -1,0 +1,6 @@
+<!--components/miCount/mi-count.wxml-->
+<view class="mi-count">
+	<l-button icon="left" icon-size="20" width="30" plain="{{true}}" disabled="{{count === 1}}" bind:lintap="decrease"></l-button>
+	<l-tag size="large" type="reading" bg-color="transparent" font-color="#000">{{count}}</l-tag>
+	<l-button icon="right" icon-size="20" width="30" plain="{{true}}" disabled="{{count === maxCount}}" bind:lintap="increase"></l-button>
+</view>

@@ -1,0 +1,38 @@
+/* pages/detail/detail.wxss */
+.container{
+  padding: 15rpx;
+}
+
+.title{
+  font-size: 45rpx;
+  line-height: 45rpx;
+  text-align: center;
+  margin: 10rpx;
+}
+
+.poster{
+  width: 100%;
+  /* display: flex;
+  justify-items: center;
+  align-items: center; */
+  /* justify-items设置网格项沿 行轴线 的对齐方式；align-items设置网格项沿 列轴线 的对齐方式 */
+}
+
+image{
+  width: 90%;
+  margin: 20rpx;
+}
+
+.content text{
+  text-align: left;
+  font-size: 30rpx;
+  line-height: 35rpx;
+}
+
+.add_date{
+  font-size: 30rpx;
+  text-align: right;
+  line-height: 30rpx;
+  margin-right: 25rpx;
+  margin-top: 20rpx;
+}

@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="tips">
+    <image src="../../../../images/tips.png"></image>
+    <swiper autoplay="true" vertical="true">
+      <swiper-item>更改地点后下拉刷新查看新的建议</swiper-item>
+      <swiper-item>点击建议项可以微调方案</swiper-item>
+    </swiper>
+  </view>
+  <view class="area weather-area">
+    <view class="advice">当天天气<text>{{weather}}</text>，{{advice}}</view>
+  </view>
+  <view class="area location-area">
+    <view class="input-bar">
+      <text class="tip">出发地：</text>
+      <input type="text" class="input" id="start" value="{{oriName}}" bindinput="getSuggest"/>
+      <!-- bindinput实时监听input输入 -->
+    </view>
+    <view wx:for="{{suggestion}}" wx:key="index" class="suggestion-box" wx:if="{{sngCondition=='start'?true:false}}">
+      <view bindtap="backfill" id="{{index}}" class="suggestion-bar">{{item.title}}</view>
+    </view>
+    <view class="divider"></view>
+    <view class="input-bar">
+      <text class="tip">目的地：</text>
+      <input type="text" class="input" id="dest" value="{{desName}}" bindinput="getSuggest"/>
+    </view>
+    <view wx:for="{{suggestion}}" wx:key="index" class="suggestion-box" wx:if="{{sngCondition=='dest'?true:false}}">
+      <view bindtap="backfill" id="{{index}}" class="suggestion-bar">{{item.title}}</view>
+    </view>
+  </view>
+  <view class="area style-area">
+    <view class="advice">出发地距离目的地<text>{{distance}}米</text>，建议<text>{{styleCN}}</text>，大概需要<text>{{duration}}分钟</text></view>
+  </view>
+  <view class="area map-area">
+    <view class="list" bindtap="getStyle">
+      <view class="list-item" id="walking" style="border-bottom-color:{{stylePos==0?'black':'grey'}}">步行</view>
+      <view class="list-item" id="bicycling" style="border-bottom-color:{{stylePos==1?'black':'grey'}}">骑行</view>
+      <view class="list-item" id="driving" style="border-bottom-color:{{stylePos==2?'black':'grey'}}">驾车</view>
+      <view class="list-item" id="transit" style="border-bottom-color:{{stylePos==3?'black':'grey'}}">公交</view>
+    </view>
+    <map id="myMap" markers="{{markers}}" show-location="true" polyline="{{polyline}}" include-points="{{points}}" wx:if="{{ismap}}"></map>
+    <movable-area class="move-btn-area">
+      <movable-view class="move-btn" direction="all" inertia="true" out-of-bounds="false">
+        <view class="open-map" bindtap="openMap" style="background:{{mapBtnColor}}">
+          <image src="../../../../images/{{positioningIcon}}.png"></image>
+        </view>
+      </movable-view>
+    </movable-area>
+    <scroll-view scroll-y="true" wx:if="{{!ismap}}">
+      <view class="map-detail" wx:for="{{steps}}" wx:key="index">
+        <view class="tip"></view>
+        <view class="map-detail-bar">{{item}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="area service-area">
+    <view class="advice">
+      目的地周边餐厅推荐您去<text>{{restaurant}}</text>，<navigator>（点击查看用户榜单）</navigator>
+    </view>
+  </view>
+  <view class="area live-area">
+    <view class="advice">
+      酒店建议您选择<text>{{hotel}}</text>，<navigator>（点击查看用户榜单）</navigator>
+    </view>
+  </view>
+  <view class="btn" bindtap="createPlan">确认方案</view>
+  <view class="bottom">
+    <view class="divider"></view>
+    <view>祝您旅行愉快：）</view>
+  </view>
+</view>

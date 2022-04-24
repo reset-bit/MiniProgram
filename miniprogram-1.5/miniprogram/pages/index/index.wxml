@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="input-bar">
+    <text class="tip">出发地：</text>
+    <input type="text" class="input" id="start" value="{{origin[0]}}" bindinput="getSuggest"/>
+    <!-- bindinput实时监听input输入 -->
+  </view>
+  <view wx:for="{{suggestion}}" wx:key="index" class="suggestion-box" wx:if="{{sngCondition=='start'?true:false}}">
+    <view bindtap="backfill" id="{{index}}" class="suggestion-bar">{{item.title}}</view>
+  </view>
+
+  <view class="input-bar">
+    <text class="tip">目的地：</text>
+    <input type="text" class="input" id="dest" value="{{destination[0]}}" bindinput="getSuggest"/>
+  </view>
+  <view wx:for="{{suggestion}}" wx:key="index" class="suggestion-box" wx:if="{{sngCondition=='dest'?true:false}}">
+    <view bindtap="backfill" id="{{index}}" class="suggestion-bar">{{item.title}}</view>
+  </view>
+
+  <view class="list" bindtap="getStyle">
+    <view class="list-item" id="walking" style="border-bottom-color:{{list_color[0]?'black':'grey'}}">步行</view>
+    <view class="list-item" id="bicycling" style="border-bottom-color:{{list_color[1]?'black':'grey'}}">自行车</view>
+    <view class="list-item" id="driving" style="border-bottom-color:{{list_color[2]?'black':'grey'}}">驾车</view>
+    <view class="list-item" id="transit" style="border-bottom-color:{{list_color[3]?'black':'grey'}}">公交</view>
+  </view>
+  <map name="myMap" id="myMap" markers="{{markers}}"
+  show-location="true" polyline="{{polyline}}" include-points="{{points}}"></map>
+  <button type="primary" bindtap="planningRoute">显示导航路线</button>
+</view>

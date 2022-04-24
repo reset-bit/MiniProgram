@@ -1,0 +1,20 @@
+<!--miniprogram/pages/personal-center/plan-btn/plan-btn.wxml-->
+<view class="container">
+  <view class="plan-detail" wx:for="{{plans}}" wx:key="index">
+    <view class="col">
+      <view class="name">
+      <view class="name-detail">{{item.oriName}}</view>
+      <image src="../../../images/arrow_down.png"></image>
+      <view class="name-detail">{{item.desName}}</view>
+    </view>
+    <view class="time">{{item.time}}</view>
+    </view>
+    <view class="divider"></view>
+    <view class="other-detail">{{item.restaurant}}</view>
+    <view class="other-detail">{{item.hotel}}</view>
+  </view>
+  <view class="bottom">
+    <view class="divider"></view>
+    <view>我是有底线的：）</view>
+  </view>
+</view>

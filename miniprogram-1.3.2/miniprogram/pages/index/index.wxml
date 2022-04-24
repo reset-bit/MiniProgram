@@ -1,0 +1,26 @@
+<!--pages/index/index.wxml-->
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+  <view wx:for="{{[newsList[0], newsList[1]]}}" wx:key="swiper{{index}}">
+    <swiper-item>
+      <image src="{{item.poster}}"></image>
+    </swiper-item>
+  </view>
+</swiper>
+<!-- 
+  幻灯片组件:indicator-dots是否显示提示点；interval/duration单位ms
+-->
+<view class="news-list">
+  <view class="news-item" wx:for="{{newsList}}" wx:key="{{item.id}}" bindtap="goToDetail" data-id="{{item._id}}">
+    <!-- wx:key="*this"代表for循环中item自身 -->
+    <!-- bindtap绑定事件函数，data-id是传递的参数（wxml:data-xxx;js:var i=e.currentTarget.dataset.xxx） -->
+    <!-- 
+      事件是视图层向逻辑层的通信方式，事件类别有：tap点击；longtap长按；touchstart触摸开始...
+      事件绑定方式：bind（冒泡事件：当一个组件上的事件被触发后，该事件也会响应父节点的事件）；catch
+      点击、长按、触摸都算冒泡事件
+     -->
+    <!-- 传递数据库中唯一标识 _id -->
+    <image src="{{item.poster}}"></image>
+    <text>{{item.title}}————{{item.add_date}}</text>
+  </view>
+  <!-- <button plain="true" bindtap="">加载更多</button> -->
+</view>

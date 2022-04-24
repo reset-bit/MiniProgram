@@ -1,0 +1,239 @@
+/* miniprogram/pages/route-plan/route-plan.wxss */
+/* 
+  z等级：
+  .searchbar:99999
+  .handle:10000
+  .handle-area:9999
+  .drawer:999
+  swiper:0/999
+*/
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchbar{
+  background: #fff;
+  position: fixed;
+  top: 15rpx;
+  z-index: 99999;
+}
+
+swiper{
+  width: 100%;
+  height: 1100rpx;
+  position: fixed;
+}
+
+.bg{
+  width: 100%;
+  height: 1100rpx;
+}
+
+.scroll-view-area{
+  width: 100%;
+  height: 1600rpx;
+  position: relative;
+  top: 200rpx;
+}
+
+.tab{
+  width: 100%;
+  height: 1000rpx;
+  /* position: sticky;
+  top: 900rpx; */
+  /* sticky粘性布局更适用于滑动过程中吸附的情况，效果顺滑，但不适用于抽屉动画 */
+  background: #fff;
+  border-radius: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.FixedTop{
+  position: fixed;
+  top: 150rpx;
+  height: 100%;
+}
+
+.FixedBottom{
+  position: relative;
+  top: 850rpx;
+}
+
+.handle-area{
+  width: 100%;
+  height: 80rpx;
+  background: #F5F5F5;
+  border-radius: 40rpx 40rpx 0rpx 0rpx;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  z-index: 9999;
+}
+
+.handle{
+  width: 20%;
+  height: 10rpx;
+  background: rgb(189, 189, 189);
+  border-radius: 10rpx;
+  margin: 20rpx 0rpx 10rpx 0rpx;
+  z-index: 10000;
+}
+
+.drawer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 70rpx;
+  background: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.btns{
+  width: 90%;
+  height: auto;
+  display: flex;
+  margin: 30rpx 5% 0rpx 5%;
+}
+
+.big-btn{
+  height: 180rpx;
+  font-size: 50rpx;
+  color: #fff;
+  border-radius: 15rpx;
+  box-shadow: 0rpx 2rpx 10rpx 3rpx rgb(209, 209, 209);
+  /* box-shadow: 水平阴影位置/竖直阴影位置/模糊距离/阴影尺寸; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.big-btn image{
+  width: 160rpx;
+  height: 160rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0rpx;
+}
+
+.btn-title{
+  width: auto;
+  height: auto;
+  font-size: 40rpx;
+}
+
+.btn-detail{
+  width: auto;
+  height: auto;
+  font-size: 20rpx;
+}
+
+#whole-btn{
+  background: #EA8058;
+  margin: 5rpx;
+}
+
+#part-btn{
+  background: #F4A403;
+  margin: 5rpx;
+}
+
+.tips{
+  font-size: 40rpx;
+  color: gray;
+  margin: 50rpx 0rpx 15rpx 10rpx;
+}
+
+.tools{
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-around;
+  margin: 0rpx 5% 0rpx 5%;
+}
+
+.tool{
+  width: 650rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(180, 224, 245, 0.925);
+  border-radius: 30rpx;
+}
+
+.tool-detail{
+  width: 16%;
+  height: 130rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10rpx 15rpx 10rpx 15rpx;
+}
+
+.tool-detail image{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.tool-detail text{
+  color: #fff;
+  font-size: 10px;
+  margin-top: 10rpx;
+}
+
+.activities{
+  width: 90%;
+  height: auto;
+  margin: 0rpx 5% 20rpx 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.acti-detail{
+  width: 650rpx;
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+}
+
+.acti-detail image{
+  width: 100%;
+  height: 220rpx;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+}
+
+.acti-detail text{
+  width: 100%;
+  height: 80rpx;
+  font-size: 40rpx;
+  background: #fff;
+  border-radius: 0rpx 0rpx 30rpx 30rpx;  
+  padding: 10rpx 0rpx 0rpx 20rpx;
+}
+
+.bottom{
+  width: 70%;
+  margin: 30rpx 15% 0rpx 15%;
+  font-size: 25rpx;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80rpx;
+}
+
+.bottom .divider{
+  margin: 10rpx;
+}

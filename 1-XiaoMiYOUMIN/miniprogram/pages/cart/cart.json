@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "mi-count": "/components/miCount/mi-count",
+        "cart-checkbox": "./checkbox/cart-checkbox"
+    }
+}

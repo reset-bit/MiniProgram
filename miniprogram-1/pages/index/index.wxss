@@ -1,0 +1,47 @@
+/* pages/index/index.wxss */
+.container{
+  height: 100vh;/*手机高度（100vw手机宽度）*/
+  display: flex;/*flex布局：容器和项目，以下*/
+  flex-direction: column;/*布局方向：垂直。row-reverse从右行排；column从下列排*/
+  align-items: center;
+
+  /* justify-content: space-around;*/
+  /*
+    设置项目在主轴方向上的对齐方式，并分配项目之间空间
+    默认：flex-start从左上角，不留空隙；center；flex-end；
+    space-beween空隙相等，起终点不变；space-around分散排列
+  */
+
+  /*align-items: strech;*/
+  /*
+    设置项目行内对齐方式
+    默认：strech未设置项目尺寸时拉伸至填满交叉轴；flex-start项目顶部与交叉轴起点对齐；center；flex-end
+  */
+
+  /*align-content: flex-end;*/
+  /*
+    多行排列时设置项目在交叉轴上的对齐方式
+    默认：strech未设置项目尺寸时拉伸至填满交叉轴；flex-start项目顶部与交叉轴起点对齐；center；flex-end
+    space-between；space-around
+  */
+
+  /*flex-wrap: nowrap;*/
+  /*
+    规定项目是否允许换行及换行方向
+    默认：nowrap不换行，可能压缩项目尺寸；wrap允许换行；wrap-reverse换行方向为wrap反方向
+  */
+}
+image{
+  width: 300rpx;/*rpx相对单位，无视设备原先尺寸，统一规定屏幕尺寸为750rpx*/
+  height: 300rpx;
+  border-radius: 50%;/*切割圆形*/
+  margin-top: 200rpx;
+}
+text{
+  font-size: 50rpx;
+  color: gray;
+  margin-top: 100rpx;
+}
+button{
+  margin-top: 50rpx;
+}

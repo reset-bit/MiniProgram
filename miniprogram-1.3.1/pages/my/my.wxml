@@ -1,0 +1,17 @@
+<!--pages/my/my.wxml-->
+<view class="myLogin">
+  <block wx:if="{{isLogin}}">
+    <image src="{{img_src}}"></image>
+    <text>{{nickName}}</text>
+  </block>  
+  <button wx:else open-type="getUserInfo" bindgetuserinfo="getMyInfo">未登录，点击登录</button>
+</view>
+<view class="myFavorite">
+  <text>我的收藏（{{number}}）</text>
+  <view class="news-list">
+    <view class="news-item" wx:for="{{newsList}}" wx:key="{{item.id}}" bindtap="goToDetail" data-id="{{item.id}}">
+    <image src="{{item.poster}}"></image>
+    <text>{{item.title}}————{{item.add_date}}</text>
+  </view>
+  </view>
+</view>

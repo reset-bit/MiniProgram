@@ -1,0 +1,12 @@
+<!--miniprogram/pages/list/list.wxml-->
+<text>miniprogram/pages/list/list.wxml</text>
+<navigator open-type="navigateBack">back to prevPage</navigator>
+<navigator url="/pages/detail/detail?id=1&name=张三">go to detail</navigator>
+<button bindtap="goToDetail">storage</button>
+
+<button bindtap="beginAdd" type="primary">新增</button>
+<view wx:for="{{list}}" wx:key="id">
+	<text>{{item.name}}</text>
+	<button bindtap="beginUpdate" data-id="{{item.id}}">修改</button>
+	<button bindtap="removeHandler" data-id="{{item.id}}">删除</button>
+</view>

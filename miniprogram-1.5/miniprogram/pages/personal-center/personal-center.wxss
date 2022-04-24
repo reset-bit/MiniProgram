@@ -1,0 +1,147 @@
+/* miniprogram/pages/personal-center/personal-center.wxss */
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0rpx;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+.top-bg{
+  width: 100%;
+  height: 350rpx;
+  position: fixed;
+  top: 0rpx;
+  z-index: 5;
+}
+
+.top-area{
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: fixed;
+  top: 30rpx;
+  z-index: 10;
+}
+
+.userphoto{
+  width: 180rpx;
+  height: 180rpx;
+  margin: 40rpx 30rpx 20rpx 40rpx;
+  border-radius: 50%;
+  border: 5rpx solid #fff;
+}
+
+.username{
+  font-size: 40rpx;
+  line-height: 200rpx;
+  color: white;
+  margin-left: 10rpx;
+  margin-top: 50rpx;
+}
+
+scroll-view{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 270rpx;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.center-area{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 60rpx 5% 40rpx 5%;
+}
+
+.big-btn{
+  height: 180rpx;
+  margin: 20rpx;
+  color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  align-self: start;
+}
+
+.btn-title{
+  font-size: 50rpx;
+  word-spacing: 5rpx;
+}
+
+.btn-title text{
+  font-size: 30rpx;
+}
+
+.big-btn image{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 5rpx;
+  right: 15rpx;
+}
+
+#order{
+  background: #EA8058;
+}
+
+#plan{
+  background: #F4A403;
+}
+
+.bottom-area{
+  width: 90%;
+  height: 980rpx;
+  margin: -30rpx 40rpx 0rpx 40rpx;
+  display: block;
+}
+
+.div{
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 50rpx 30rpx 50rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 15rpx;
+}
+
+.div-title{
+  color: gray;
+  font-size: 30rpx;
+}
+
+.divider{
+  margin: 5rpx 0rpx;
+}
+
+.div-detail{
+  display: flex;
+  align-items: center;
+  line-height: 70rpx;
+}
+
+.div-detail image{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 5rpx;
+}
+
+.div-detail text{
+  padding-left: 20rpx;
+  font-size: 35rpx;
+}

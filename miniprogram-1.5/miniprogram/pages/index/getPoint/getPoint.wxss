@@ -1,0 +1,5 @@
+/* miniprogram/pages/getPoint/getPoint.wxss */
+map{
+  width: 100%;
+  height: 700rpx;
+}

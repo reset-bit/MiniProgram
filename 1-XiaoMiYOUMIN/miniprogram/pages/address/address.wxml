@@ -1,0 +1,10 @@
+<!--miniprogram/pages/address/address.wxml-->
+<view>
+    <l-button bind:lintap="beginAdd">add</l-button>
+    <view wx:for="{{list}}" wx:key="id">
+        <text>{{item.name}}</text>
+        <view>{{item.phone}}</view>
+        <view>{{item.region}}</view>
+        <l-button bind:lintap="beginUpdate" data-id="{{item.id}}">update</l-button>
+    </view>
+</view>

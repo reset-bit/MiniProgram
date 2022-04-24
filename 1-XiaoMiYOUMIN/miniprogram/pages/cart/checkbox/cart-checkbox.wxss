@@ -1,0 +1,5 @@
+/* pages/cart/checkbox/cart-checkbox.wxss */
+.cart-checkbox {
+	width: 30rpx;
+	height: 30rpx;
+}

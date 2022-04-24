@@ -1,0 +1,5 @@
+/* miniprogram/pages/index/index.wxss */
+.text-demo {
+  background-color: yellowgreen;
+  color: #fff;
+}

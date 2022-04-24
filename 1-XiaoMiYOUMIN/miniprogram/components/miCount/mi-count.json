@@ -1,0 +1,7 @@
+{
+	"component": true,
+	"usingComponents": {
+		"l-button": "/miniprogram_npm/lin-ui/button/index",
+		"l-tag": "/miniprogram_npm/lin-ui/tag/index"
+	}
+}

@@ -1,0 +1,20 @@
+<!--miniprogram/pages/category/category.wxml-->
+<wxs src="../../comm.wxs" module="global"></wxs>
+<view class="container">
+    <view class="left">
+        <view wx:for="{{listMain}}" wx:key="id" class="list-main-item">
+            <text class="{{item.id === activeId ? 'active' : ''}}" bindtap="toggleActiveId"
+                data-id="{{item.id}}">{{item.name}}</text>
+        </view>
+    </view>
+    <view class="right">
+        <image src="{{global.baseUrl + listMain[activeId].avatar}}" class="list-main-avatar"></image>
+        <view class="list-sub">
+            <navigator wx:for="{{listSub}}" wx:key="id" class="list-sub-item">
+                <image src="{{global.baseUrl + item.avatar}}"></image>
+                <text>{{item.name}}</text>
+            </navigator>
+        </view>
+        <view hidden="{{listSub.length !== 0}}" class="tip">- 暂无相关分类 -</view>
+    </view>
+</view>
